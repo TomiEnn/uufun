@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->  
+<mapper namespace="com.zzj.uufun.mapper.AdminMapper">  
+
+    <!-- insert Admin -->
+    <insert id = "insertAdmin" parameterType="com.zzj.uufun.entity.Admin">
+        INSERT INTO Admin(username,password,email,name,department,isEnabled,isLocked,loginFailureCount,lockedDate,loginDate,loginIp) 
+        VALUES(#{id},#{username},#{password},#{email},#{name},#{department},#{isEnabled},#{isLocked},#{loginFailureCount},#{lockedDate},#{loginDate},#{loginIp});
+    </insert>
+    
+ 
+  <select id="findByUsername" parameterType="com.zzj.uufun.entity.Admin" resultType="com.zzj.uufun.entity.Admin">
+    select * from Admin where username = #{username} 
+  </select>
+
+
+ 
+</mapper>
