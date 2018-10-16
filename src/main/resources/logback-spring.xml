@@ -3,7 +3,7 @@
 <configuration  scan="true" scanPeriod="60 seconds" debug="false">
     <contextName>logback</contextName>
     <!-- 定义日志的根目录 -->
-    <property name="LOG_HOME" value="/app/log" />
+    <property name="LOG_HOME" value="/log/test/" />
     <!-- 定义日志文件名称 -->
     <property name="appName" value="uufun"></property>
 
@@ -19,7 +19,7 @@
 
     <!--输出到文件-->
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/${appName}.log</file>
+        <file>${LOG_HOME}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_HOME}/${appName}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
              <MaxHistory>365</MaxHistory>

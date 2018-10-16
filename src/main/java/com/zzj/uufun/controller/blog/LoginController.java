@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
+@RequestMapping("/blog")
 public class LoginController {
 	
 	@RequestMapping("/login")
-    public String hello(Model m) {
+    public String index(Model m) {
 		m.addAttribute("name", "Tomi_Jay");
-        return "login";
+        return "blog/login/login";
     }
 
 }
